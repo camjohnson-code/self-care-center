@@ -1,8 +1,105 @@
-/* font-family: 'Quicksand', sans-serif;
-COLORS
-light-yellow - #f7e4bf;
-light-blue - #78a7c6;
-dark-blue - #134d71;
-white - #ffffff;
-black - #000000;
-*/
+/* Variables */
+:root {
+  --primary-color: #134d71;
+  --secondary-color: #78a7c6;
+  --background-gradient: linear-gradient(
+    var(--primary-color),
+    var(--secondary-color),
+    #f7e4bf
+  );
+  --font-family: "Quicksand", sans-serif;
+  --text-color-white: #ffffff;
+  --text-color-black: #000000;
+}
+
+/* Global Styles */
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  background-image: var(--background-gradient);
+  background-size: 100% 100%;
+  font-family: var(--font-family);
+  color: var(--text-color-white);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Header Styles */
+header {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* Form Styles */
+form {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+}
+
+.options {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.choice {
+  color: var(--text-color-black);
+}
+
+/* Message Section Styles */
+.which-message {
+  width: 33%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.which-message button {
+  width: 40%;
+}
+
+/* Button Styles */
+button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 5px 10px;
+  font-weight: lighter;
+}
+
+/* Specific Form Styles */
+.which-message > form,
+.message {
+  background-color: white;
+}
+
+.message {
+  width: 50%;
+  margin: 100px auto;
+  height: 15vh;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Image Styles */
+img {
+  width: 60px;
+}
