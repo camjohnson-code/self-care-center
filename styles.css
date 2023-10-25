@@ -76,27 +76,37 @@ form {
 /* Button Styles */
 button {
   background-color: var(--primary-color);
-  color: var(--text-color);
+  color: var(--text-color-white);
   border: none;
   border-radius: 3px;
   font-size: 15px;
   padding: 5px 10px;
   font-weight: lighter;
+  font-family: var(--font-family);
+}
+
+label {
+  font-style: italic;
 }
 
 /* Specific Form Styles */
 .which-message > form,
-.message {
+.message-section {
   background-color: white;
 }
 
-.message {
+.message-section {
   width: 50%;
   margin: 100px auto;
   height: 15vh;
   border-radius: 15px;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.message {
+  color: #000000;
 }
 
 /* Image Styles */
