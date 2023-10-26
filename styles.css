@@ -85,6 +85,10 @@ button {
   font-family: var(--font-family);
 }
 
+button:disabled {
+  background-color: #78a7c6;
+}
+
 label {
   font-style: italic;
 }
