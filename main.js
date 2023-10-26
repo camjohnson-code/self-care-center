@@ -1,26 +1,39 @@
 // EVENT HANDLERS
-var messageBtn = document.querySelector(".receive-message");
+var receiveMessageBtn = document.querySelector(".receive-message");
 var messageSection = document.querySelector(".message-section");
 var bellIcon = document.querySelector(".icon");
 var affirmationBtn = document.querySelector("#affirmation");
 var mantraBtn = document.querySelector("#mantra");
 
 // EVENT LISTENERS
-messageBtn.addEventListener("click", function (event) {
+receiveMessageBtn.addEventListener("click", function (event) {
   generateMessage(event);
 });
+affirmationBtn.addEventListener("click", enableButton);
+mantraBtn.addEventListener("click", enableButton);
 
 // FUNCTIONS
+
+function enableButton() {
+  if (affirmationBtn.checked || mantraBtn.checked)
+    receiveMessageBtn.disabled = false;
+}
+
+function disableButton() {
+  if (!affirmationBtn.checked && !mantraBtn.checked)
+    receiveMessageBtn.disabled = true;
+}
+
 function generateRandomNumber(max) {
   return Math.floor(Math.random() * max);
 }
 
 function returnAffirmation() {
-  return affirmations[generateRandomNumber(affirmations.length)];
+  return affirmations[generateRandomNumber(affirmations.length)].message;
 }
 
 function returnMantra() {
-  return mantras[generateRandomNumber(mantras.length)];
+  return mantras[generateRandomNumber(mantras.length)].message;
 }
 
 function generateMessage(event) {
@@ -29,8 +42,11 @@ function generateMessage(event) {
   if (affirmationBtn.checked) {
     bellIcon.classList.add("hidden");
     messageSection.innerHTML = `<p class="message">${returnAffirmation()}</p>`;
-  } else if (mantraBtn.checked) {
+  } else {
     bellIcon.classList.add("hidden");
     messageSection.innerHTML = `<p class="message">${returnMantra()}</p>`;
   }
 }
+
+// STARTING CONDITIONS
+disableButton();
