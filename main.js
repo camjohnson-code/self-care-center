@@ -36,6 +36,17 @@ function returnMantra() {
   return mantras[generateRandomNumber(mantras.length)].message;
 }
 
+function makeClearButton() {
+  var clearButton = document.createElement("button");
+  clearButton.innerText = "Clear";
+  clearButton.classList.add("clear-button");
+  messageSection.appendChild(clearButton);
+
+  var clearBtn = document.querySelector(".clear-button");
+
+  clearBtn.addEventListener("click", removeMessage);
+}
+
 function generateMessage(event) {
   event.preventDefault();
 
@@ -46,6 +57,16 @@ function generateMessage(event) {
     bellIcon.classList.add("hidden");
     messageSection.innerHTML = `<p class="message">${returnMantra()}</p>`;
   }
+
+  makeClearButton();
+}
+
+function removeMessage() {
+  event.preventDefault();
+
+  messageSection.innerHTML = ``;
+  messageSection.appendChild(bellIcon);
+  bellIcon.classList.remove("hidden");
 }
 
 // STARTING CONDITIONS
