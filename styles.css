@@ -2,41 +2,44 @@
 :root {
   --primary-color: #134d71;
   --secondary-color: #78a7c6;
-  --background-gradient: linear-gradient(
-    var(--primary-color),
-    var(--secondary-color),
-    #f7e4bf
-  );
+  --background-gradient: linear-gradient(var(--primary-color), var(--secondary-color), #f7e4bf);
   --font-family: "Quicksand", sans-serif;
   --text-color-white: #ffffff;
   --text-color-black: #000000;
+  --dark-red: #cc0000;
 }
 
 /* Global Styles */
-html,
-body {
+html, body {
   height: 100%;
   overflow: hidden;
+  margin: 0;
 }
 
 body {
-  margin: 0;
   background-image: var(--background-gradient);
   background-size: 100% 100%;
   font-family: var(--font-family);
   color: var(--text-color-white);
 }
 
-.hidden {
-  display: none;
-}
-
 /* Header Styles */
 header {
   margin: 20px 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   font-weight: 700;
+}
+
+header > button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 20px;
+  background-color: var(--secondary-color);
+  color: var(--text-color-white);
 }
 
 /* Form Styles */
@@ -74,28 +77,38 @@ form {
 }
 
 /* Button Styles */
-button {
-  background-color: var(--primary-color);
+button, .favorite-button, .view-favorites {
   color: var(--text-color-white);
+  font-family: var(--font-family);
   border: none;
   border-radius: 3px;
   font-size: 15px;
   padding: 5px 10px;
   font-weight: lighter;
-  font-family: var(--font-family);
 }
 
-button:disabled {
-  background-color: #78a7c6;
+button, .favorite-button {
+  background-color: var(--primary-color);
 }
 
-label {
-  font-style: italic;
+.favorite-button {
+  width: 30%;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.view-favorites {
+  background-color: var(--dark-red);
+}
+
+.favorite-activated {
+  fill: red;
 }
 
 /* Specific Form Styles */
-.which-message > form,
-.message-section {
+.which-message > form, .message-section {
   background-color: white;
 }
 
@@ -110,8 +123,36 @@ label {
   align-items: center;
 }
 
+.buttons-div {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.hidden {
+  display: none;
+}
+
 .message {
   color: #000000;
+}
+
+/* Favorites Page */
+.favorites-page {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  height: auto;
+}
+
+.favorites-page > .message-section {
+  margin: 20px;
+  width: 20%;
+  height: 40px;
+  padding: 30px 15px;
+  text-align: center;
 }
 
 /* Image Styles */
