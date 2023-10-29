@@ -44,10 +44,12 @@ This project was solo developed by Me! Check out my GitHub [here](https://github
 
 - Successful implementation of random message generation.
 - Creation of a favorites feature with toggle functionality.
+- Adding functionality for localStorage.
 
 #### Challenges:
 
 - I initially struggled with the functionality of the favorite button. I overcame by carefully managing data structures and toggling favorite status.
+- Utilizing localStorage was something I have not been exposed to prior to this project. It took some self-teaching on my part to understand and implement it into this application.
 
 ### Looking Ahead:
 
@@ -58,4 +60,3 @@ Moving forward, I'd like to add the following features:
 - User never sees a repeated message
 - Login Page
 - Mobile responsiveness
-- Local Storage
