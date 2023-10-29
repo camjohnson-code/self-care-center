@@ -21,8 +21,9 @@ mantraBtn.addEventListener("click", enableButton);
 clearBtn.addEventListener("click", removeMessage);
 favoriteBtn.addEventListener("click", function () {
   toggleIsFavorite();
-  checkIfFavorite();
+  changeFavoriteButtonColor();
   showViewFavoritesButton();
+  addToLocalStorage();
 });
 viewFavoritesBtn.addEventListener("click", function () {
   showFavoritesPage();
@@ -69,7 +70,7 @@ function generateMessage() {
   }
 
   buttonsDiv.classList.remove("hidden");
-  checkIfFavorite();
+  changeFavoriteButtonColor();
 }
 
 function toggleIsFavorite() {
@@ -88,7 +89,7 @@ function toggleIsFavorite() {
   }
 }
 
-function checkIfFavorite() {
+function changeFavoriteButtonColor() {
   if (affirmationBtn.checked) {
     for (var i = 0; i < affirmations.length; i++) {
       if (selectedMessage.innerText === affirmations[i].message) {
@@ -129,6 +130,42 @@ function showViewFavoritesButton() {
     viewFavoritesBtn.classList.remove("hidden");
   } else {
     viewFavoritesBtn.classList.add("hidden");
+  }
+}
+
+function checkIfFavorite() {
+  var localStorageFavorites = [];
+
+  for (var i = 0; i < affirmations.length; i++) {
+    if (affirmations[i].isFavorite)
+      localStorageFavorites.push(affirmations[i].message);
+  }
+
+  for (var i = 0; i < mantras.length; i++) {
+    if (mantras[i].isFavorite) localStorageFavorites.push(mantras[i].message);
+  }
+
+  return localStorageFavorites;
+}
+
+function addToLocalStorage() {
+  localStorage.setItem("favoriteMessages", JSON.stringify(checkIfFavorite()));
+}
+
+function initializeFavorites() {
+  var storedFavorites = localStorage.getItem("favoriteMessages");
+  var favoriteMessages = [];
+
+  if (storedFavorites) favoriteMessages = JSON.parse(storedFavorites);
+
+  for (var i = 0; i < affirmations.length; i++) {
+    affirmations[i].isFavorite = favoriteMessages.includes(
+      affirmations[i].message
+    );
+  }
+
+  for (var i = 0; i < mantras.length; i++) {
+    mantras[i].isFavorite = favoriteMessages.includes(mantras[i].message);
   }
 }
 
@@ -183,3 +220,5 @@ function showHomePage() {
 
 // STARTING CONDITIONS
 disableButton();
+initializeFavorites();
+showViewFavoritesButton();
