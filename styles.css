@@ -2,7 +2,11 @@
 :root {
   --primary-color: #134d71;
   --secondary-color: #78a7c6;
-  --background-gradient: linear-gradient(var(--primary-color), var(--secondary-color), #f7e4bf);
+  --background-gradient: linear-gradient(
+    var(--primary-color),
+    var(--secondary-color),
+    #f7e4bf
+  );
   --font-family: "Quicksand", sans-serif;
   --text-color-white: #ffffff;
   --text-color-black: #000000;
@@ -10,7 +14,8 @@
 }
 
 /* Global Styles */
-html, body {
+html,
+body {
   height: 100%;
   overflow: hidden;
   margin: 0;
@@ -77,7 +82,9 @@ form {
 }
 
 /* Button Styles */
-button, .favorite-button, .view-favorites {
+button,
+.favorite-button,
+.view-favorites {
   color: var(--text-color-white);
   font-family: var(--font-family);
   border: none;
@@ -87,7 +94,8 @@ button, .favorite-button, .view-favorites {
   font-weight: lighter;
 }
 
-button, .favorite-button {
+button,
+.favorite-button {
   background-color: var(--primary-color);
 }
 
@@ -108,8 +116,13 @@ button, .favorite-button {
 }
 
 /* Specific Form Styles */
-.which-message > form, .message-section {
+.which-message > form,
+.message-section {
   background-color: white;
+}
+
+.receive-message:disabled {
+  background-color: var(--secondary-color);
 }
 
 .message-section {
