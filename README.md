@@ -26,7 +26,7 @@ This project was an assigned solo project during week 3 at Turing School of Soft
 ### Contributors:
 
 [//]: <> (Who worked on this application? Link to their GitHubs.)
-This project was solo developed by Me! Check out my GitHub [here](https://github.com/camjohnson-code).
+This project was solo developed by me! Check out my GitHub [here](https://github.com/camjohnson-code).
 
 ### Learning Goals:
 
@@ -49,7 +49,7 @@ This project was solo developed by Me! Check out my GitHub [here](https://github
 #### Challenges:
 
 - I initially struggled with the functionality of the favorite button. I overcame by carefully managing data structures and toggling favorite status.
-- Utilizing localStorage was something I have not been exposed to prior to this project. It took some self-teaching on my part to understand and implement it into this application.
+- Utilizing localStorage was something I have not been exposed to prior to this project. It took a tiny bit of self-teaching and a big chunk of help from my mentor to understand and implement it into this application.
 
 ### Looking Ahead:
 
@@ -57,6 +57,7 @@ Moving forward, I'd like to add the following features:
 
 - User can add their own message
 - User can delete a message
+- User can delete a favorite
 - User never sees a repeated message
 - Login Page
 - Mobile responsiveness
